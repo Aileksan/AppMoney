@@ -8,19 +8,12 @@
 import Foundation
 
 
-struct ExpensesItem: Codable, Equatable{
+struct ExpensesItem: Identifiable, Codable, Equatable{
+    var id = UUID()
     
     let date: Date
     let category: String
     let amount: Double
     let description: String
     
-}
-
-struct ProfitItem: Codable, Equatable{
-    
-    let date: Date
-    let category: String
-    let amount: Double
-    let description: String
 }
