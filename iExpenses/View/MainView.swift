@@ -9,26 +9,14 @@ import SwiftUI
 
 struct MainView: View {
     
-    @StateObject var expenses = Expenses()
-    @State private var showingAddExpense = false
+    @StateObject private var  expenses = Expenses()
     
-    
-    var body: some View {
+     var body: some View {
         NavigationStack{
+            ChartView()
+            
             ListView()
-            
-            
-                .navigationTitle("iExpense")
-                .toolbar {
-                    Button {
-                        showingAddExpense = true
-                    } label: {
-                        Image(systemName: "plus")
-                    }
-                }
-        }
-        .sheet(isPresented: $showingAddExpense) {
-            AddView(expensess: expenses)
+                
         }
     }
 }

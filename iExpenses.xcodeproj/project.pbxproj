@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		760614352A995430001E5321 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760614342A995430001E5321 /* ChartView.swift */; };
 		76741BEC2A97C26D00334932 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76741BEB2A97C26D00334932 /* ListView.swift */; };
 		76D4A4992A969CF700322DF4 /* iExpensesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D4A4982A969CF700322DF4 /* iExpensesApp.swift */; };
 		76D4A49B2A969CF700322DF4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D4A49A2A969CF700322DF4 /* MainView.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		760614342A995430001E5321 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		76741BEB2A97C26D00334932 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		76D4A4952A969CF700322DF4 /* iExpenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iExpenses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76D4A4982A969CF700322DF4 /* iExpensesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpensesApp.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				76D4A49A2A969CF700322DF4 /* MainView.swift */,
+				760614342A995430001E5321 /* ChartView.swift */,
 				76741BEB2A97C26D00334932 /* ListView.swift */,
 				76F701032A9736F000977D0D /* AddView.swift */,
 			);
@@ -176,6 +179,7 @@
 				76D4A4A92A969D7E00322DF4 /* MoneyItem.swift in Sources */,
 				76D4A49B2A969CF700322DF4 /* MainView.swift in Sources */,
 				76741BEC2A97C26D00334932 /* ListView.swift in Sources */,
+				760614352A995430001E5321 /* ChartView.swift in Sources */,
 				76F701042A9736F000977D0D /* AddView.swift in Sources */,
 				76D4A4992A969CF700322DF4 /* iExpensesApp.swift in Sources */,
 				76D4A4AC2A96B5BB00322DF4 /* Helpers.swift in Sources */,

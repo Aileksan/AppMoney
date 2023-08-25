@@ -42,7 +42,7 @@ struct AddView: View {
                 Button("Save") {
                     let item = ExpensesItem(date: date, category: category, amount: amount, description: descripption)
                     expensess.eItems.append(item)
-                    
+                    print(expensess.eItems)
                     dismiss()
                 }
             }
