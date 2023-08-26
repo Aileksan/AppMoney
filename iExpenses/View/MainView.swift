@@ -13,11 +13,10 @@ struct MainView: View {
     
      var body: some View {
         NavigationStack{
-            ChartView()
-            
-            ListView()
+                ChartView()
                 
-        }
+                ListView()
+            }
     }
 }
 
