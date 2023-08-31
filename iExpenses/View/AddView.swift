@@ -8,42 +8,48 @@
 import SwiftUI
 
 struct AddView: View {
+    enum MoneyType: String {
+            case expense = "Расходы"
+            case income = "Доходы"
+        }
     
     @ObservedObject var expensess: Expenses
     @Environment(\.dismiss) var dismiss
     
     @State private var date = Date()
-    
-    @State private var category = "Доходы"
+    @State private var mType: MoneyType = .expense
+
     @State private var amount: Double = 0
-    @State private var current = "USD"
     @State private var descripption = ""
     
-    let types = ["Доходы","Расходы"]
+    var isSaveButtonDisabled: Bool {
+            descripption.isEmpty || amount == nil
+        }
     
     var body: some View {
         NavigationStack{
             Form{
                 TextField("Что сделал?", text: $descripption)
-                
-                Picker("Категория", selection: $category){
-                    ForEach(types, id: \.self) {
-                        Text($0)
-                    }
+                Picker("Категория", selection: $mType){
+                    Text("Расходы").tag(MoneyType.expense)
+                    Text("Доходы").tag(MoneyType.income)
                 }
-                TextField("Amount", value: $amount, format: .currency(code: current))
-                
+                TextField("Amount", value: $amount, format: .currency(code: "USD"))
                     .keyboardType(.decimalPad)
                 DatePicker("Дата", selection: $date, displayedComponents: [.date])
-                
             }
-            .navigationTitle("Add new expense")
+            .navigationTitle("Add new Money")
             .toolbar {
-                Button("Save") {
-                    let item = ExpensesItem(date: date, category: category, amount: amount, description: descripption)
-                    expensess.eItems.append(item)
-                    print(expensess.eItems)
-                    dismiss()
+                ToolbarItem(placement: .navigationBarTrailing){
+                    Button("Save") {
+                        switch  mType {
+                        case .expense:
+                            expensess.expenseItems.append(ExpensesItem(date: date, category: mType.rawValue, amount: amount, description: descripption))
+                        case .income:
+                            expensess.incomeItems.append(IncomeItem(date: date, category: mType.rawValue, amount: amount, description: descripption))
+                        }
+                        dismiss()
+                    }
                 }
             }
         }

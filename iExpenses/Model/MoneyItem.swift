@@ -17,3 +17,13 @@ struct ExpensesItem: Identifiable, Codable, Equatable{
     let description: String
     
 }
+
+struct IncomeItem: Identifiable, Codable, Equatable{
+    var id = UUID()
+    
+    let date: Date
+    let category: String
+    let amount: Double
+    let description: String
+    
+}
